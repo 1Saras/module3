@@ -51,24 +51,24 @@ Created on Wed Jan 23 09:24:31 2019
 #Handling errorful input of a word e.g. three:
 
 
-#choice = 0
-#while True:
-#    try:
-#        while choice < 1 or choice > 3:
-#            print('***choice****')
-#            print('1. Display my name')
-#            print('2. Display my age')
-#            print('3. Display my city')
-#            choice = int(input('What is your choice? \n'))  
-#        break
-#    except ValueError:
-#        print('please type a number! \n')
-#if choice == 1:
-#    print('Your name is: Ms Wu')
-#elif choice == 2:
-#    print('You are: 5 years old')
-#elif choice == 3:
-#    print('Your city is: London')
+choice = 0
+while True:
+    try:
+        while choice < 1 or choice > 3:
+            print('***choice****')
+            print('1. Display my name')
+            print('2. Display my age')
+            print('3. Display my city')
+            choice = int(input('What is your choice? \n'))  
+        break
+    except ValueError:
+        print('please type a number! \n')
+if choice == 1:
+    print('Your name is: Ms Wu')
+elif choice == 2:
+    print('You are: 5 years old')
+elif choice == 3:
+    print('Your city is: London')
     
 
 
