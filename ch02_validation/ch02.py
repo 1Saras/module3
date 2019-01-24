@@ -37,7 +37,7 @@ Created on Wed Jan 23 11:34:04 2019
 
 
 
-##TASK 3:
+##TASK 3: Validating string content
 
 #Option = input("Please input yes or no \n").lower()
 #print(Option)
@@ -46,7 +46,7 @@ Created on Wed Jan 23 11:34:04 2019
 #print(Option)
 
 
-##TASK 4: An example for validating string length
+##TASK 4: Validating string length
 
 #password = input("What’s your password? \n")
 #if len(password) <=7:
@@ -55,7 +55,7 @@ Created on Wed Jan 23 11:34:04 2019
 #    print("That's 'A-OK'! Thanks!")
 
 
-##TASK 5 & 6
+##TASK 5 & 6 - while true input validation
 
 choice = 0
 while True:
@@ -77,10 +77,7 @@ elif choice == 3:
     print('Your city is: London')
 
 
-##TASK 6
-    
-#CLASS -BASED USER INPUT VALIDATION
-#further on validation
+##TASK 7 - OOP user input validation
 
 class Spam(object):
     def __init__(self, description, value):
