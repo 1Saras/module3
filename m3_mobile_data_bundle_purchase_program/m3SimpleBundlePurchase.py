@@ -6,10 +6,6 @@ Created on Tue Dec 11 13:54:04 2018
 """
 
 
-"""
-Creating an empty function
-"""
-
 def passwordCheck(truePasscode, balance):
     attemptcounter = 3
     while attemptcounter > 0:
@@ -25,20 +21,23 @@ def ask_transaction(balance):
     ask = 0   
     while True:
         try:
-            while ask < 1 or ask > 2:    
-                print ('Which transaction would you like you carry out? Please input the number 1 or 2')    
+            while ask < 1 or ask > 3:    
+                print ('Which transaction would you like you carry out? Please input the number 1 or 2. To quit enter 3')    
                 print ('1 Check balance')
                 print ('2 Purchase data bundle')
+                print ('3 To quit')
                 ask = int(input())
             break
         except ValueError:
-            print('Please type 1 or 2 only! \n')                
+            print('Please type 1, 2 or 3 only! \n')                
     if ask == 1:
         print ('Your balance is {}'.format(balance)) 
     elif ask == 2:   
         return checkPhoneNo(balance)
+    elif ask ==3:
+        print('Thanks - you are now logged out')
     else:
-        print ('You must input the number 1 or 2')
+        print ('You must input the number 1, 2 or 3')
 
 
 def checkPhoneNo(balance):
@@ -53,17 +52,22 @@ def checkPhoneNo(balance):
 
 
 def checkCredit(balance):
-    maxpurchase=100
-    creditpurchase=int(input('How much credit would you like to purchase? Your input must be a multiple of 5:\n£'))
-    while creditpurchase > maxpurchase or creditpurchase > balance or creditpurchase %5!=0 or creditpurchase <0:
-        if creditpurchase > maxpurchase:
-            creditpurchase=int(input('Your input must be less than £100. Please re-enter an amount: \n£'))
-        elif creditpurchase > balance:
-            creditpurchase=int(input('Your input must be less than your current balance. Your balance is £{}.\nPlease re-enter an amount: \n£'.format(balance)))
-        elif creditpurchase %5!=0:
-            creditpurchase=int(input('Your input must be a multiple of 5. Please re-enter an amount: \n£'))
-        elif creditpurchase <0:
-            creditpurchase=int(input('Your input must be a positive number. Please re-enter an amount: \n£'))
+    maxpurchase=100   
+    while True:
+        try:
+            creditpurchase=int(input('How much credit would you like to purchase? Your input must be a multiple of 5:\n£'))
+            while creditpurchase > maxpurchase or creditpurchase > balance or creditpurchase %5!=0 or creditpurchase <0:
+                if creditpurchase > maxpurchase:
+                    creditpurchase=int(input('Your input must be less than £100. Please re-enter an amount: \n£'))
+                elif creditpurchase > balance:
+                    creditpurchase=int(input('Your input must be less than your current balance. Your balance is £{}.\nPlease re-enter an amount: \n£'.format(balance)))
+                elif creditpurchase %5!=0:
+                    creditpurchase=int(input('Your input must be a multiple of 5. Please re-enter an amount: \n£'))
+                elif creditpurchase <0:
+                    creditpurchase=int(input('Your input must be a positive number. Please re-enter an amount: \n£'))
+            break 
+        except ValueError:
+            print('Please enter a number')
     calculate_new_balance(creditpurchase, balance)
 
 

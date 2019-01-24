@@ -5,7 +5,7 @@ Created on Tue Dec 11 13:39:52 2018
 @author: saras
 """
 
-from SimpleBundlePurchase_v2 import passwordCheck
+from m3SimpleBundlePurchase import passwordCheck
 
 # Test call to programme:
 print ('TEST EXAMPLE 1')
