@@ -79,10 +79,5 @@ def checkBalance(balance):
         return False
     
 
-#def multiple_of_five(creditpurchase, balance):
-#    while creditpurchase %5!=0:
-#        creditpurchase=int(input('Your input must be a multiple of 5, please re-enter an amount: \n£'))
-#    balance = round((balance - creditpurchase),2)
-#    print ('Congrats on your credit purchase.\nYour balance is now £{}.'.format(balance))  
 
     

@@ -47,21 +47,59 @@ Created on Wed Jan 23 11:34:04 2019
 
 
 ##TASK 4: An example for validating string length
-#page 30 to do
 
-password = input("What’s your password? \n")
-if len(password) <=7:
-    print("Password must be minimum 8 characters long")
-else:
-    print("That's 'A-OK'! Thanks!")
-
+#password = input("What’s your password? \n")
+#if len(password) <=7:
+#    print("Password must be minimum 8 characters long")
+#else:
+#    print("That's 'A-OK'! Thanks!")
 
 
+##TASK 5 & 6
+
+choice = 0
+while True:
+    try:
+        while choice < 1 or choice > 3:
+            print('***choice****')
+            print('1. Display my name')
+            print('2. Display my age')
+            print('3. Display my city')
+            choice = int(input('What is your choice? \n'))  
+        break
+    except ValueError:
+        print('Please type number 1, 2 or 3! \n')
+if choice == 1:
+    print('Your name is: Sarika')
+elif choice == 2:
+    print('You are: 20 years old')
+elif choice == 3:
+    print('Your city is: London')
 
 
+##TASK 6
+    
+#CLASS -BASED USER INPUT VALIDATION
+#further on validation
+
+class Spam(object):
+    def __init__(self, description, value):
+        if not description or value <= 0:
+            raise ValueError
+        self.description = description
+        self.value = value
+s = Spam('s', 5)
+print(s.value) #prints 5, if input is <=0 then will print raise ValueError
 
 
+#assert statement:
 
+class Spam(object):
+    def __init__(self, description, value):
+        assert description != ""
+        assert value > 0
+        self.description = description
+        self.value = value
 
 
 
