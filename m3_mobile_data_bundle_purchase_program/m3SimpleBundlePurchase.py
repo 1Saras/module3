@@ -52,20 +52,19 @@ def checkPhoneNo(balance):
 
 def checkCredit(balance):
     maxpurchase=100            
-    try:
-        creditpurchase=int(input('How much credit would you like to purchase? Your input must be a multiple of 5:\n£'))
-        while creditpurchase > maxpurchase or creditpurchase > balance or creditpurchase %5!=0 or creditpurchase <0:
+    creditpurchase=int(input('How much credit would you like to purchase? Your input must be a multiple of 5:\n£'))
+    while creditpurchase > maxpurchase or creditpurchase > balance or creditpurchase %5!=0 or creditpurchase <=0:
+        try:
             if creditpurchase > maxpurchase:
                 creditpurchase=int(input('Your input must be less than £100. Please re-enter an amount: \n£'))
             elif creditpurchase > balance:
                 creditpurchase=int(input('Your input must be less than your current balance. Your balance is £{}.\nPlease re-enter an amount: \n£'.format(balance)))
             elif creditpurchase %5!=0:
                 creditpurchase=int(input('Your input must be a multiple of 5. Please re-enter an amount: \n£'))
-            elif creditpurchase <0:
+            elif creditpurchase <=0:
                 creditpurchase=int(input('Your input must be a positive number. Please re-enter an amount: \n£')) 
-                break
-    except ValueError:
-                print('Please enter a number')
+        except ValueError:
+            print('Please enter a number')
     calculate_new_balance(creditpurchase, balance)
 
 
